@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  MISCELLANEOUS SETTINGS/COMMANDS  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Add separator slide to the beginning of each section ==>
+%% Blue on white:
+% \AtBeginSection[]{%
+%   \begin{frame}[standout, c]{~}
+%     %\vfill
+%     \usebeamerfont{title}%
+%     \textcolor{SpotColor}{\insertsectionhead}
+%     %\vfill
+%   \end{frame}%
+% }
+%
+%% White on blue:
+\AtBeginSection[]{{%
+  \setbeamercolor{background canvas}{bg=UBonnBlue, fg=white}%
+  \colorlet{SpotColor}{white}%
+  \begin{frame}[standout, c]{~}
+    %\vfill
+    \usebeamerfont{title}\hypersetup{linkcolor=white}%
+    \insertsection
+    %\vfill
+  \end{frame}%
+  \colorlet{SpotColor}{UBonnBlue}%
+}}
+%
+%% Alternativelyy, add ``Outline'' slide to the beginning of each section ==>
+% \AtBeginSection[]{
+%   \begin{frame}[plain]{Outline}
+%     \medskip
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
+%% <==
+
+\title{Some ideas}
+\subtitle{Recording some brilliant ideas from papers or other}
+\author[TcheL]{%
+  Tche LIU \inst{a}
+}
+\institute{%
+  \inst{a} USTC, China
+}
+\date{%
+	Share my collections to you \\[\medskipamount]
+	\textmd{\today}%
+}
+
+%%%%%%%%%%%%%%%%%%%
+%%  TITLE SLIDE  %%
+%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[standout]{~}
+	\titlepage%
+\end{frame}
+
+\begin{frame}[standout]{Outline}
+	\medskip
+	\tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%
+%%  MAIN PART  %%
+%%%%%%%%%%%%%%%%%
+

@@ -1,0 +1,25 @@
+\documentclass[aspectratio=169, 11pt, t]{beamer}
+
+\input{preambles/Preamble_Presentation}
+\newcommand{\secinctex}[1]{\include{sources/\secname/#1}}
+\newcommand{\secincgraph}[2][1.0]{%
+  \includegraphics[scale=#1]{gallery/\secname/#2}
+}
+
+\begin{document}
+
+\include{sources/preface}
+
+%% Full Wavefield Inversion
+\section{FWI}
+
+%% Wavefield Forward Modeling
+\section{Modeling}
+
+%% Other
+\section{Other}
+
+\include{sources/epilogue}
+
+\end{document}
+
