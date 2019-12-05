@@ -1,0 +1,38 @@
+
+\currentpaper[https://doi.org/10.1093/gji/ggw224]{komatitsch2016anelastic}
+
+\begin{frame}[c]{\titleprefix: Storage strategy for anelastic kernels}
+
+  \centering
+
+  \begin{minipage}{0.4\textwidth}
+    \secincgraph[0.14]{Komatitsch_2016_GJI_Storage-strategy-%
+      for-anelastic-kernels.png}
+  \end{minipage}
+  %
+  \hspace{1 cm}
+  %
+  \begin{minipage}{0.5\textwidth}
+    \tiny
+    \begin{figureblock}{Figure 2}
+      (a) store the entire forward run to disk, read it back from disk in
+      reverse order while computing the adjoint wavefield:
+      \emph{the required amount of storage, and heavy I/O.}
+
+      (b) perform the forward run first and store its final time step to disk,
+      and in a second stage perform the adjoint run while simultaneously
+      redoing the forward run backwards, reversing time and starting from
+      the stored final time step:
+      \emph{because of going backwards, unstable in the anelastic case or
+      in the present of energy loss.}
+
+      (c) during the first stage, save checkpointing/restart files to disk
+      every few hundred or thousand time steps; during the second stage,
+      preform two runs simultaneously, and perform the forward run in chunks
+      in reverse order but in the forward direction:
+      \emph{always stable, and also exact; meaningful only if storage buffer
+      is large enough.}
+    \end{figureblock}
+  \end{minipage}
+
+\end{frame}

@@ -13,7 +13,7 @@
 
 % AER/JEL/JEP style
 
-\usepackage[backend=biber, natbib=true, bibencoding=inputenc, bibstyle=authoryear, citestyle=authoryear-comp, mincitenames=1, maxcitenames=3, minbibnames=99, maxbibnames=99, uniquename=false, uniquelist=true, backref=true, backrefstyle=three, doi=true, isbn=false, dashed=false, sorting=ynt, sortcites=true, mergedate=true, dateabbrev=false, abbreviate=false, citetracker=true]{biblatex}
+\usepackage[backend=biber, natbib=true, bibencoding=inputenc, bibstyle=authoryear, citestyle=authoryear-comp, mincitenames=1, maxcitenames=3, minbibnames=1, maxbibnames=99, uniquename=false, uniquelist=true, backref=true, backrefstyle=three, doi=true, isbn=false, dashed=false, sorting=ynt, sortcites=true, mergedate=true, dateabbrev=false, abbreviate=false, citetracker=true]{biblatex}
 % sortcites sorts the in-text citations by year of publication
 \DeclareBibliographyAlias{newspaper}{article}
 
@@ -25,7 +25,7 @@
 	{\printnames{labelname}}
 	{\ifciteseen
 		{\printnames{labelname}}
-		{\printnames[][1-5]{labelname}}%
+		{\printnames[][1-3]{labelname}}%
 	}
 	{}
 	{}
@@ -33,7 +33,7 @@
 	{\printnames{labelname}}
 	{\ifciteseen
 		{\printnames{labelname}}
-		{\printnames[][1-5]{labelname}}%
+		{\printnames[][1-3]{labelname}}%
 	}
 	{}
 	{}

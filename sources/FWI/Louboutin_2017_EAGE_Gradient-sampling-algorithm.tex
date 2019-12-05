@@ -1,0 +1,41 @@
+
+\currentpaper[https://slim.gatech.edu/Publications/Public/Conferences/%
+SINBAD/2015/Fall/louboutin2015SINBADFess/louboutin2015SINBADFess.pdf]%
+{louboutin2017extending}
+
+\begin{frame}[c]{\titleprefix: Gradient sampling algorithm}
+
+  \centering
+
+  \begin{minipage}{0.3\textwidth}
+    \secincgraph[0.15]{Louboutin_2017_EAGE_Gradient-sampling-step.png}
+  \end{minipage}
+  %
+  \hspace{1 cm}
+  %
+  \begin{minipage}{0.5\textwidth}
+    \tiny
+    \begin{figureblock}{Gradient smapling algorithm}
+      \begin{itemize}
+        \tiny
+        \item sampling $N + 1$ vector $\bf x_{ki}$ in a ball
+          $B_{\epsilon_k} (\bf x_k)$ defined as all $\bf x_{ki}$ such that
+          $|| \bf x_k - \bf x_{ki} ||^2_2 < \epsilon_k$,
+          where $\epsilon_k$ is the maximum distance between the current
+          estimate and a sampled vector;
+        \item calculating gradients for each sample, i.e.,
+          $\bf g_{ki} = \nabla \Phi (\bf x_{ki})$;
+        \item computing descent directions as a weighted sum over all sampled
+          gradient, i.e.,
+          \[ \bf g_k \approx \sum_{i = 0}^p \omega_i \bf g_{ki},
+             \text{ such that } \sum_{i = 0}^p \omega_i = 1,
+             \omega_i > 0 \forall i \]
+        \item updating the model according to $\bf x_{k + 1} = \bf x_k - \alpha
+          \bf H^{ - 1} \bf g_k$, where $\alpha$ is a step length
+          obtained from a line search and $\bf H^{ - 1}$ is an approximation
+          of the inverse Hessian.
+      \end{itemize}
+    \end{figureblock}
+  \end{minipage}
+
+\end{frame}
