@@ -1,6 +1,8 @@
 # wget https://github.com/github/gitignore/raw/master/TeX.gitignore
 
 Ideas.pdf
+Ideas-template.tgz
+template/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
