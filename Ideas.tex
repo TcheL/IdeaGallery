@@ -1,10 +1,16 @@
 \documentclass[aspectratio=169, 11pt, t]{beamer}
 
 \input{preambles/Preamble_Presentation}
+
 \newcommand{\secinctex}[1]{\include{sources/\secname/#1}}
+\newcommand{\secinconlytex}[1]{%
+  \includeonly{sources/preface, sources/epilogue, sources/#1}
+}
 \newcommand{\secincgraph}[2][1.0]{%
   \includegraphics[scale=#1]{gallery/\secname/#2}
 }
+
+% \secinconlytex{FWI/Tromp_2005_GJI_Adjoint-method}
 
 \begin{document}
 

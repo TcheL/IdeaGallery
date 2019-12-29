@@ -8,35 +8,35 @@
     The Metropolis-Hastings (M-H) sampler consists of two steps:
     the first is to generate a proposed new random vector $\bf x'$
     and the second is to decide whether to accept or reject it.
-
     If accepted the chain moves to $\bf x'$,
     if rejected it stays as its original position $\bf x$.
 
-    In the first step, the random vector $\bf x'$ is drawn from
-    the distribution $q(\bf x' | \bf x)$.
-    Here, it is assumed that some method is available to do this.
+    \begin{itemize}
+      \tiny
+      \item In the first step, the random vector $\bf x'$ is drawn from
+      the distribution $q(\bf x' | \bf x)$.
+      Here, it is assumed that some method is available to do this.
+      An example is a multidimensional Gaussian distribution centred on $\bf x$:
+      \begin{equation}\label{eq:sambridge2014parallel-1}
+        q(\bf x' | \bf x) = \frac{1}{ \sqrt{(2\pi)^N | \Sigma |} }
+          e^{ - \frac{1}{2} (\bf x' - \bf x)^T \Sigma^{-1} (\bf x' - \bf x) }
+      \end{equation}
 
-    An example is a multidimensional Gaussian distribution centred on $\bf x$:
-    \begin{equation}\label{eq:sambridge2014parallel-1}
-      q(\bf x' | \bf x) = \frac{1}{ \sqrt{(2\pi)^N | \Sigma |} }
-        e^{ - \frac{1}{2} (\bf x' - \bf x)^T \Sigma^{-1} (\bf x' - \bf x) }
-    \end{equation}
-
-    Having drawn the new vector $\bf x'$,
-    this is accepted with probability $\alpha(\bf x' | \bf x)$.
-    To ensure convergence to the target PDF, $\pi(\bf x)$,
-    the M-H rule is used to determine the acceptance probability
-    \[ \alpha(\bf x' | \bf x) = \min\left( 1,
-      \frac{ \pi(\bf x') q(\bf x | \bf x') }{ \pi(\bf x) q(\bf x' | \bf x) }
-      |J| \right) \]
-    where $|J|$ is the determinant of the Jacobian
-    between the space in which $\bf x$ and $\bf x'$ lies.
-    Typically, these are the same space and so $|J| = 1$.
-
-    The distribution $q(\bf x | \bf x')$ is the proposal probability
-    for the reverse step from $\bf x'$ to $\bf x$,
-    and since often this is symmetrical as in \eqref{eq:sambridge2014parallel-1}
-    the proposal ratio cancels.
+      \item Having drawn the new vector $\bf x'$,
+      this is accepted with probability $\alpha(\bf x' | \bf x)$.
+      To ensure convergence to the target PDF, $\pi(\bf x)$,
+      the M-H rule is used to determine the acceptance probability
+      \[ \alpha(\bf x' | \bf x) = \min\left( 1,
+        \frac{ \pi(\bf x') q(\bf x | \bf x') }{ \pi(\bf x) q(\bf x' | \bf x) }
+        |J| \right) \]
+      where $|J|$ is the determinant of the Jacobian
+      between the space in which $\bf x$ and $\bf x'$ lies.
+      Typically, these are the same space and so $|J| = 1$.
+      The distribution $q(\bf x | \bf x')$ is the proposal probability
+      for the reverse step from $\bf x'$ to $\bf x$,
+      and since often this is symmetrical as in
+      \eqref{eq:sambridge2014parallel-1} the proposal ratio cancels.
+    \end{itemize}
 
   \end{block}
 
