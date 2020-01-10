@@ -1,0 +1,38 @@
+
+\currentpaper[https://doi.org/10.1093/gji/ggt180]{minson2013bayesian}
+
+\begin{frame}[c]{\titleprefix: The Metropolis algorithm}
+
+  \tiny
+
+  The Metropolis algorithm describes a random walk through model space that
+  is independent of the history of the walker.
+
+  \begin{block}{Appendix B}
+    Starting with an arbitrary initial sample $x_0$,
+    the Metropolis algorithm produces $N$ samples of
+    the target distribution $\pi$ by the following:
+
+    For $i = 1, 2, \ldots, N$
+    \begin{itemize}
+      \tiny
+      \item Draw $z \sim \mathcal{N}(0, \Sigma)$ and compute a candidate sample
+      $y = x_{i - 1} + z$.
+
+      \item Generate a sample $u$ from $\mathcal{U}(0, 1)$, the uniform
+      distribution on $(0, 1)$.
+
+      \item Compute $r(x_{i - 1}, y) = \min \left\{ \frac{\pi(y)}
+      {\pi(x_{i - 1})}, 1 \right\}$.
+
+      \item If $u \leq r$, $x_i = y$. Otherwise $x_i = x_{i - 1}$.
+    \end{itemize}
+
+  \end{block}
+
+  More details about the Metropolis-Hastings algorithm refer to
+  \href{https://en.wikipedia.org/wiki/%
+  Metropolis-Hastings_algorithm\#Formal_derivation}{Wikipedia}.
+
+\end{frame}
+
