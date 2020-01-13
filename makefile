@@ -31,7 +31,7 @@ view :
 	evince $(file).pdf
 
 clean :
-	-rm -f $(foreach suf,$(sufs),$(file).$(suf))
+	-rm -f $(foreach suf,$(sufs),$(file).$(suf)) pdflatex*.fls
 	-rm -f $(foreach dir,$(dirs),$(foreach suf,$(sufs),$(dir)/*.$(suf)))
 
 clear :
