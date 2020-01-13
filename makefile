@@ -1,7 +1,10 @@
 file := Ideas
 
 dirs := sources \
-        sources/FWI
+        sources/FWI \
+		sources/Modelling \
+		sources/Invesion \
+		sources/Other
 
 sufs := aux \
         bbl bcf blg \
