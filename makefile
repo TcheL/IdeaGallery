@@ -3,7 +3,7 @@ file := Ideas
 dirs := sources \
         sources/FWI \
 		sources/Modelling \
-		sources/Invesion \
+		sources/Inversion \
 		sources/Other
 
 sufs := aux \
