@@ -434,7 +434,9 @@
 % https://tex.stackexchange.com/questions/228684/two-counters-for-beamer-presentations
 %\newcommand{\titleprefix}{\insertsection~{\pageinsection}}
 %\newcommand{\titleprefix}{\insertsection~{\frameinsection}}
-\newcommand{\titleprefix}{\insertsection-{\frameinsection}}
+% tche:
+% \newcommand{\titleprefix}{\insertsection-{\frameinsection}}
+\newcommand{\titleprefix}{\insertsectionhead-{\frameinsection}}
 % <==
 
 % Continuation counter for frames with the ``allowframebreaks'' option.

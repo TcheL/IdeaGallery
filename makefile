@@ -4,6 +4,7 @@ dirs := sources \
         sources/FWI \
 		sources/Modelling \
 		sources/Inversion \
+		sources/Noise \
 		sources/Other
 
 sufs := aux \

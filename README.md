@@ -1,6 +1,6 @@
 # IdeaGallery
 
-Recording some brilliant ideas from papers or others
+Recording some brilliant ideas from papers or others.
 
 ## Author
 
