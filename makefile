@@ -16,7 +16,7 @@ sufs := aux \
         out \
         toc \
         run.xml \
-        snm synctex.gz \
+        snm synctex.gz synctex\(busy\) \
         vrb \
         xdv
 
